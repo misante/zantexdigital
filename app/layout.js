@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Navbar from "./-components/Navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,10 +20,36 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className="font-sans">
+        {/* <nav className="bg-gray-900 text-white py-4">
+          <div className="max-w-6xl mx-auto px-4 flex justify-between items-center">
+            <a href="/" className="text-xl font-bold">
+              Zantex Digital
+            </a>
+            <ul className="flex space-x-6">
+              <li>
+                <a href="/" className="hover:text-indigo-300">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="/products" className="hover:text-indigo-300">
+                  Products
+                </a>
+              </li>
+              <li>
+                <a href="/how-to" className="hover:text-indigo-300">
+                  How to Use
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav> */}
+        <Navbar />
         {children}
+        <footer className="bg-gray-800 text-white py-4 text-center">
+          <p>&copy; 2025 Zantex Digital</p>
+        </footer>
       </body>
     </html>
   );
